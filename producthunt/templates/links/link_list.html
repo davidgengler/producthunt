@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load comments %}
+{% block content %}
+{% if is_paginated %}
+<ol start="{{ page_obj.start_index }}">
+{% else %}{% endif %}
+<ol>
+{% for link in object_list %}
+  <li> [{{ link.votes }}]
+      <a href="{% url 'link_detail' pk=link.pk %}">
+      <b>{{ link.title }}</b>
+          {% get_comment_count for link as comment_count %}
+          {{ comment_count }} comment{{ comment_count|pluralize }}
+          <img src="{{ link.thumbnail }}" alt="{{ link.headline }}" height="100" width="100">
+      </a>
+      {{ link.description }}
+    <a href="{{ link.url }}">Direct Link</a>
+  </li>
+{% endfor %}
+</ol>
+
+{% if is_paginated %}
+<div class="pagination">
+    {% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">More &raquo;</a>
+    {% endif %}
+</div>
+{% endif %}
+
+{% endblock %}
