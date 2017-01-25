@@ -2,7 +2,16 @@ from django.views.generic import ListView, DetailView
 from .models import Link
 from django.contrib.auth import get_user_model
 
-class LinkListView(ListView):
+# Adds comment functionality including a random comment at the bottom of the page
+from django_comments.models import Comment
+
+class RandomComment(object):
+    def get_context_data(self, **kwargs):
+        context = super(RandomComment, self).get_context_data(**kwargs)
+        context[u"quip"] = Comment.objects.order_by('?')[0]
+        return context
+
+class LinkListView(RandomComment, ListView):
     model = Link
     queryset = Link.with_votes.all()
     paginate_by = 5

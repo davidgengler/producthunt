@@ -36,4 +36,5 @@ urlpatterns = [
     url(r'^link/(?P<pk>\d+)/$', LinkDetailView.as_view(), name='link_detail'),
     url(r'^link/edit/(?P<pk>\d+)/$', auth(LinkEditView.as_view()), name='link_edit'),
     url(r'^link/delete/(?P<pk>\d+)/$', auth(LinkDeleteView.as_view()), name='link_delete'),
+    url(r'^comments/', include('django_comments.urls')),
 ]

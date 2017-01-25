@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load comments %}
 {% block content %}
 {% if is_paginated %}
     <ol start="{{ page_obj.start_index }}">
@@ -9,6 +10,8 @@
       <li  class="col-md-10"> [{{ link.votes }}]
           <a href="{% url 'link_detail' pk=link.pk %}">
           <b>{{ link.title }}</b>
+              {% get_comment_count for link as comment_count %}
+              {{ comment_count }} comment{{ comment_count|pluralize }}
               <img src="{{ link.thumbnail }}" alt="{{ link.headline }}" height="100" width="100">
           </a>
           {{ link.description }}
@@ -24,5 +27,9 @@
         {% endif %}
     </div>
 {% endif %}
+
+    <blockquote style="background-color: #ddd; padding: 4px; border-radius: 10px; margin: 10px 0; color: #666; font-size: smaller; text-shadow: rgba(255,255,255,0.8) 1px 1px 0;">
+{{ quip.comment|truncatechars:140 }}
+    </blockquote>
 
 {% endblock %}
