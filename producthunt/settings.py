@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'n3ff=ssgmk^k&pv$+ucaa4m!=5ti%0n2w90u2v)ppo!d)jl-p%'
+SECRET_KEY = '@(b=ndac@9k%w#y7(h5p!^a!)6y_p2&oln@lsz6x61=wyusg4('
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,9 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'bootstrap3',
     'django.contrib.admin',
-    'django.contrib.sites',
-    'django_comments', # For comments..and .sites above
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -43,9 +42,6 @@ INSTALLED_APPS = [
     'links',
     'registration',
 ]
-
-
-SITE_ID = 1 # Needed for comments
 
 # Login/out settings - plus import above
 from django.core.urlresolvers import reverse_lazy

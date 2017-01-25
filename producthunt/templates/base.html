@@ -1,26 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <title>Product Hunt Django</title>
     {% load static %}
-  <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %} " />
+   <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %} " /> -->
+    {# Load the tag library #}
+    {% load bootstrap3 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<h1>Product Hunt (Built in Django!)</h1>
+<div class="container-fluid">
+    <h1>Product Hunt (Built in Django!)</h1>
 
-{% block content %}
-{% endblock %}
+    {# Display django.contrib.messages as Bootstrap alerts #}
+    {% bootstrap_messages %}
 
-<footer>
-  <p>
-    <a href="{% url 'home' %}">Home</a> |
-{% if user.is_authenticated %}
-    <a href="{% url 'logout' %}">Logout</a> |
-      <a href="{% url 'profile' slug=user.username %}"<strong>My Profile</strong></a> |
-      <a href="{% url 'link_submit' %}">Submit Link</a>
-{% else %}
-    <a href="{% url 'registration_register' %}">Register</a>
-{% endif %}
-  </p>
-</footer>
+    {% block content %}
+    {% endblock %}
+
+    <footer>
+      <p>
+        <a href="{% url 'home' %}">Home</a> |
+    {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}">Logout</a> |
+          <a href="{% url 'profile' slug=user.username %}"<strong>My Profile</strong></a> |
+          <a href="{% url 'link_submit' %}">Submit Link</a>
+    {% else %}
+        <a href="{% url 'registration_register' %}">Register</a>
+    {% endif %}
+      </p>
+    </footer>
+</div>
 </body>
 </html>

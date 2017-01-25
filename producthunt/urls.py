@@ -23,8 +23,6 @@ from links.views import UserProfileEditView
 from links.views import LinkCreateView, LinkDetailView
 from links.views import LinkEditView
 from links.views import LinkDeleteView
-from django.contrib import sites
-from django_comments import comments
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -38,5 +36,4 @@ urlpatterns = [
     url(r'^link/(?P<pk>\d+)/$', LinkDetailView.as_view(), name='link_detail'),
     url(r'^link/edit/(?P<pk>\d+)/$', auth(LinkEditView.as_view()), name='link_edit'),
     url(r'^link/delete/(?P<pk>\d+)/$', auth(LinkDeleteView.as_view()), name='link_delete'),
-    url(r'^comments/', include('django_comments.urls')),
 ]
