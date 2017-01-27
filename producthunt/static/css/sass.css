@@ -1,0 +1,17 @@
+body {
+  font: 100% #333333 Helvetica, sans-serif;
+  background-color: #fafafa; }
+  body .navbar h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  body .row .panel-group {
+    display: inline-flex; }
+    body .row .panel-group .panel-default {
+      padding-bottom: 10px;
+      padding-left: 10px; }
+    body .row .panel-group .vote {
+      display: inline-flex; }
+
+/*# sourceMappingURL=sass.css.map */

@@ -1,0 +1,49 @@
+$font-stack:    Helvetica, sans-serif;
+$background: #fafafa;
+$text: #333333;
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+  font: 100% $text $font-stack;
+  background-color: $background;
+
+  .navbar {
+    h1 {
+      @include centerer
+    }
+    li {
+    }
+  }
+
+
+
+.row {
+    .panel-group {
+      display: inline-flex;
+
+      .panel-default {
+        padding-bottom: 10px;
+        padding-left: 10px;
+      }
+
+      .vote {
+        display: inline-flex;
+      }
+
+      img {
+      }
+
+      .linkbody {
+      }
+
+      .comments {
+      }
+    }
+  }
+}

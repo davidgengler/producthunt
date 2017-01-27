@@ -1,35 +1,45 @@
 {% extends "base.html" %}
 {% load comments %}
 {% block content %}
-{% if is_paginated %}
+<div class="jumbotron">
+    A fun learning experience in full-stack development.
+</div>
     <ol start="{{ page_obj.start_index }}">
-    {% else %}{% endif %}
-    <ol>
-    {% for link in object_list %}
-    <div class="row">
-      <li  class="col-md-10"> [{{ link.votes }}]
-          <a href="{% url 'link_detail' pk=link.pk %}">
-          <b>{{ link.title }}</b>
-              {% get_comment_count for link as comment_count %}
-              {{ comment_count }} comment{{ comment_count|pluralize }}
-              <img src="{{ link.thumbnail }}" alt="{{ link.headline }}" height="100" width="100">
-          </a>
-          {{ link.description }}
-        <a href="{{ link.url }}">Direct Link</a>
-      </li>
-    {% endfor %}
-    </ol>
+        <div class="row">
+            {% for link in object_list %}
+                <div class="panel-group col-lg-12">
+                    <div class="vote col-sm-1">
+                        <a href="#">Up</a>
+                        [{{ link.votes }}]
+                        <a href="#">Down</a>
+                    </div>
+                    <img src="{{ link.thumbnail }}" alt="{{ link.headline }}" height="100" width="100">
+                    <div class="panel panel-default col-sm-11">
+                        <a href="{% url 'link_detail' pk=link.pk %}"><div class="panel-heading"><strong>{{ link.title }}</strong></div></a>
+                        <div class="panel-body">
+                        {{ link.description }}
+                        </div>
+                        <a href="{% url 'link_detail' pk=link.pk %}"  class="badge comments">{% get_comment_count for link as comment_count %}
+                         {{ comment_count }} comment{{ comment_count|pluralize }}</a>
+                        <a href="{{ link.url }}">Direct Link</a>
+                    </div>
+                </div>
+            {% endfor %}
 
     {% if is_paginated %}
-    <div class="pagination">
-        {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}">More &raquo;</a>
+    <ul class="pager">
+        {% if page_obj.has_previous %}
+        <li class="previous"><a href="?page={{ page_obj.previous_page_number }}">< Previous</a></li>
         {% endif %}
-    </div>
+
+        {% if page_obj.has_next %}
+        <li class="next"><a href="?page={{ page_obj.next_page_number }}">Next > </a></li>
+        {% endif %}
+    </ul>
 {% endif %}
 
     <blockquote style="background-color: #ddd; padding: 4px; border-radius: 10px; margin: 10px 0; color: #666; font-size: smaller; text-shadow: rgba(255,255,255,0.8) 1px 1px 0;">
-{{ quip.comment|truncatechars:140 }}
+        {{ quip.comment|truncatechars:140 }}
     </blockquote>
 
 {% endblock %}

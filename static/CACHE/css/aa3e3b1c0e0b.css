@@ -1,0 +1,7 @@
+/* line 5, producthunt/static/css/sass.scss */
+body {
+  font: 100% #333333 Helvetica, sans-serif;
+  background-color: #fafafa; }
+  /* line 9, producthunt/static/css/sass.scss */
+  body h1 {
+    align-self: center; }
