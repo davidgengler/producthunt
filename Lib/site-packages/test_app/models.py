@@ -1,0 +1,11 @@
+# coding: utf-8
+
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.db import models
+
+
+class CustomUser(AbstractBaseUser):
+    new_field = models.CharField(max_length=25)
+    objects = BaseUserManager()
+
+    USERNAME_FIELD = 'new_field'

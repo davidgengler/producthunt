@@ -1,11 +1,13 @@
 from django.apps import AppConfig
-from django.contrib.contenttypes.checks import check_generic_foreign_keys
+from django.contrib.contenttypes.checks import (
+    check_generic_foreign_keys, check_model_name_lengths,
+)
 from django.core import checks
 from django.db.models.signals import post_migrate, pre_migrate
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from .management import (
-    inject_rename_contenttypes_operations, update_contenttypes,
+    create_contenttypes, inject_rename_contenttypes_operations,
 )
 
 
@@ -15,5 +17,6 @@ class ContentTypesConfig(AppConfig):
 
     def ready(self):
         pre_migrate.connect(inject_rename_contenttypes_operations, sender=self)
-        post_migrate.connect(update_contenttypes)
+        post_migrate.connect(create_contenttypes)
         checks.register(check_generic_foreign_keys, checks.Tags.models)
+        checks.register(check_model_name_lengths, checks.Tags.models)

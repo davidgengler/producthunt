@@ -6,16 +6,18 @@
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Jonathan Lindén, 2015
 # Jonathan Lindén, 2014
+# Mattias Hansson <mattias.gothenburg@gmail.com>, 2016
 # nip3o <n@niclasolofsson.se>, 2014
+# Petter Strandmark <petter.strandmark@gmail.com>, 2019
 # Samuel Linde <samuel@linde.im>, 2011
-# Thomas Lundqvist <thomas@biljettshop.se>, 2013,2016
+# Thomas Lundqvist, 2013,2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:12+0200\n"
-"PO-Revision-Date: 2016-05-21 08:39+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"POT-Creation-Date: 2017-09-24 13:46+0200\n"
+"PO-Revision-Date: 2019-01-28 13:46+0000\n"
+"Last-Translator: Petter Strandmark <petter.strandmark@gmail.com>\n"
 "Language-Team: Swedish (http://www.transifex.com/django/django/language/"
 "sv/)\n"
 "MIME-Version: 1.0\n"
@@ -73,12 +75,10 @@ msgstr "Fyll i samma lösenord som tidigare för verifiering."
 
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"../password/"
-"\">this form</a>."
+"password, but you can change the password using <a href=\"{}\">this form</a>."
 msgstr ""
-"Klartextlösenord lagras inte, så det är inte möjligt att se denna användares "
-"lösenord, men du kan ändra lösenordet med <a href=\"../password/\">detta "
-"formulär</a>."
+"Lösenord lagras inte direkt, så det finns inget sätt att se denna användares "
+"lösenord, men du kan ändra lösenorden med <a href=\"{}\">detta formulär</a>."
 
 #, python-format
 msgid ""
@@ -122,19 +122,19 @@ msgid "hash"
 msgstr "hash"
 
 msgid "variety"
-msgstr ""
+msgstr "variation"
 
 msgid "version"
-msgstr ""
+msgstr "version"
 
 msgid "memory cost"
-msgstr ""
+msgstr "minneskostnad"
 
 msgid "time cost"
-msgstr ""
+msgstr "tidskostnad"
 
 msgid "parallelism"
-msgstr ""
+msgstr "parallellism"
 
 msgid "work factor"
 msgstr "arbetsfaktor"
@@ -191,6 +191,8 @@ msgstr "användarnamn"
 
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
 msgstr ""
+"Obligatoriskt. 150 tecken eller färre. Endast bokstäver, siffror och @/./+/-/"
+"_."
 
 msgid "A user with that username already exists."
 msgstr "En användare med det användarnamnet finns redan."
@@ -274,11 +276,15 @@ msgid ""
 "Enter a valid username. This value may contain only English letters, "
 "numbers, and @/./+/-/_ characters."
 msgstr ""
+"Fyll i ett giltigt användarnamn. Detta värde får endast innehålla bokstäver "
+"a-z, siffror och @/./+/-/_."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "
 "@/./+/-/_ characters."
 msgstr ""
+"Fyll i ett giltigt användarnamn. Detta värde får endast innehålla bokstäver, "
+"siffror och @/./+/-/_."
 
 msgid "Logged out"
 msgstr "Utloggad"

@@ -15,7 +15,6 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
@@ -47,11 +46,10 @@ INSTALLED_APPS = [
 ]
 
 # Login/out settings - plus import above
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse
 
-LOGIN_URL=reverse_lazy('login')
-LOGIN_REDIRECT_URL = reverse_lazy('home')
-LOGOUT_URL=reverse_lazy('logout')
+LOGIN_URL=reverse('login')
+LOGIN_REDIRECT_URL = reverse('home')
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -63,7 +61,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'producthunt.urls'
 
 TEMPLATES = [
     {
@@ -83,6 +80,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'producthunt.wsgi.application'
 
+ROOT_URLCONF = 'producthunt.urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases

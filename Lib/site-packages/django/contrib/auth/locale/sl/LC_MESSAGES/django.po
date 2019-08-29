@@ -3,15 +3,16 @@
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Jure Cuhalev <gandalf@owca.info>, 2012
-# zejn <zejn@kiberpipa.org>, 2013,2016
+# Primož Verdnik <primoz.verdnik@gmail.com>, 2017
+# zejn <zejn@kiberpipa.org>, 2013,2016-2017
 # zejn <zejn@kiberpipa.org>, 2011-2013
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:12+0200\n"
-"PO-Revision-Date: 2016-05-21 08:39+0000\n"
-"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
+"POT-Creation-Date: 2017-09-24 13:46+0200\n"
+"PO-Revision-Date: 2017-12-03 15:49+0000\n"
+"Last-Translator: zejn <zejn@kiberpipa.org>\n"
 "Language-Team: Slovenian (http://www.transifex.com/django/django/language/"
 "sl/)\n"
 "MIME-Version: 1.0\n"
@@ -66,16 +67,15 @@ msgid "Password confirmation"
 msgstr "Potrditev gesla"
 
 msgid "Enter the same password as before, for verification."
-msgstr "Vnesite isto geslo kot prej, za preverjanje"
+msgstr "Vnesite isto geslo kot prej, za preverjanje."
 
 msgid ""
 "Raw passwords are not stored, so there is no way to see this user's "
-"password, but you can change the password using <a href=\"../password/"
-"\">this form</a>."
+"password, but you can change the password using <a href=\"{}\">this form</a>."
 msgstr ""
-"Gesla se ne shranjujejo v berljivi obliki, zato gesla tega uporabnika ni "
-"mogoče videti, lahko pa geslo spremenite s pomočjo <a href=\"password/"
-"\">tega obrazca</a>."
+"Čitljiva gesla se ne shranjujejo, tako da ni možno videti gesla tega "
+"uporabnika, lahko pa geslo spremenite z uporabo <a href=\"{}\">tega obrazca</"
+"a>."
 
 #, python-format
 msgid ""
@@ -119,19 +119,19 @@ msgid "hash"
 msgstr "razpršilo"
 
 msgid "variety"
-msgstr ""
+msgstr "pestrost"
 
 msgid "version"
-msgstr ""
+msgstr "različica"
 
 msgid "memory cost"
-msgstr ""
+msgstr "pomnilniška zahtevnost"
 
 msgid "time cost"
-msgstr ""
+msgstr "časovna zahtevnost"
 
 msgid "parallelism"
-msgstr ""
+msgstr "paralelnost"
 
 msgid "work factor"
 msgstr "faktor obremenitve"
@@ -166,7 +166,9 @@ msgstr "stanje skrbnika"
 msgid ""
 "Designates that this user has all permissions without explicitly assigning "
 "them."
-msgstr "Uporabnik bo imel skrbniška dovoljenja."
+msgstr ""
+"Določi, da bo uporabnik imel vsa dovoljenja, ne da bi mu jih posebej "
+"dodelili."
 
 msgid ""
 "The groups this user belongs to. A user will get all permissions granted to "
@@ -185,7 +187,7 @@ msgid "username"
 msgstr "uporabniško ime"
 
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-msgstr ""
+msgstr "Zahtevano. 150 znakov ali manj. Le črke, števke in znaki @/./+/-/_."
 
 msgid "A user with that username already exists."
 msgstr "Uporabnik s tem uporabniškim imenom že obstaja."
@@ -271,11 +273,15 @@ msgid ""
 "Enter a valid username. This value may contain only English letters, "
 "numbers, and @/./+/-/_ characters."
 msgstr ""
+"Vnesite veljavno uporabniško ime. Ta vrednost sme vsebovati le angleške "
+"črke, števke in znake @/./+/-/_."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "
 "@/./+/-/_ characters."
 msgstr ""
+"Vnesite veljavno uporabniško ime. Ta vrednost sme vsebovati le črke, števke "
+"in znake @/./+/-/_."
 
 msgid "Logged out"
 msgstr "Odjavljen"

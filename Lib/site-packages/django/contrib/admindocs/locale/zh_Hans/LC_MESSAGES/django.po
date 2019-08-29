@@ -3,6 +3,7 @@
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Lele Long <schemacs@gmail.com>, 2015
+# Liping Wang <lynn.config@gmail.com>, 2016
 # mozillazg <opensource.mozillazg@gmail.com>, 2016
 # Ronald White <ouyanghongyu@gmail.com>, 2014
 # Kevin Sze <leiarix@gmail.com>, 2012
@@ -10,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-05-17 23:12+0200\n"
-"PO-Revision-Date: 2016-05-21 09:51+0000\n"
+"POT-Creation-Date: 2017-01-19 16:49+0100\n"
+"PO-Revision-Date: 2017-09-19 16:40+0000\n"
 "Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/django/django/"
 "language/zh_CN/)\n"
@@ -131,7 +132,7 @@ msgid "Arguments"
 msgstr "参数"
 
 msgid "Back to Model documentation"
-msgstr ""
+msgstr "返回到模型文档"
 
 msgid "Model documentation"
 msgstr "模型文档"
@@ -204,7 +205,7 @@ msgid "Templates:"
 msgstr "模板:"
 
 msgid "Back to View documentation"
-msgstr ""
+msgstr "回到视图文档"
 
 msgid "View documentation"
 msgstr "视图文档"
@@ -231,13 +232,6 @@ msgstr ""
 "\n"
 "查看函数：<code>%(full_name)s</code>. 名字：<code>%(url_name)s</code>.\n"
 "\n"
-
-msgid "Boolean (Either True or False)"
-msgstr "布尔值（真或假）"
-
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr "字段类型：%(field_type)s"
 
 msgid "tag:"
 msgstr "标签："
