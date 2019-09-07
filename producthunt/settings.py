@@ -9,8 +9,12 @@ https://docs.djangoproject.com/en/1.10/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.10/ref/settings/
 """
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '@(b=ndac@9k%w#y7(h5p!^a!)6y_p2&oln@lsz6x61=wyusg4('
 
 import os
+import django
+django.setup()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -21,19 +25,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@(b=ndac@9k%w#y7(h5p!^a!)6y_p2&oln@lsz6x61=wyusg4('
+ROOT_URLCONF = 'producthunt.urls'
 
 ALLOWED_HOSTS = []
-
-ROOT_URLCONF = __name__
 
 # Application definition
 
 INSTALLED_APPS = [
     'compressor',
     'django.contrib.sites',
-    #'django-comments',
+    'django_comments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +44,7 @@ INSTALLED_APPS = [
     'bootstrap4',
     'producthunt',
     'links',
-    'django-registration',
+    'registration',
 ]
 
 # Login/out settings - plus import above

@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.db.models import Count
-from django.core.urlresolvers import reverse # For get_abosolute_url
+from django.urls import reverse # For get_absolute_url
 
 class LinkVoteCountManager(models.Manager):
     def get_queryset(self):
@@ -11,7 +11,7 @@ class LinkVoteCountManager(models.Manager):
 
 class Link(models.Model):
     title = models.CharField("Headline", max_length=100)
-    author = models.ForeignKey(User)
+    author = models.ForeignKey(User, on_delete=models.PROTECT)
     submitted_on = models.DateTimeField(auto_now_add=True)
     score = models.IntegerField(default=0)
     url = models.URLField("URL", max_length=250, blank=True)
@@ -29,14 +29,14 @@ class Link(models.Model):
         return reverse('link_detail', kwargs={'pk': str(self.id)})
 
 class Vote(models.Model):
-    voter = models.ForeignKey(User)
-    link = models.ForeignKey(Link)
+    voter = models.ForeignKey(User, on_delete=models.PROTECT)
+    link = models.ForeignKey(Link, on_delete=models.PROTECT)
 
     def __unicode__(self):
         return "%s voted %s" % (self.voter.username, self.link.title)
 
 class UserProfile(models.Model):
-    user = models.OneToOneField(User, unique=True)
+    user = models.OneToOneField(User, unique=True, on_delete=models.PROTECT)
     # Extra attributes
     bio = models.TextField(null=True)
 
