@@ -18,31 +18,32 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@(b=ndac@9k%w#y7(h5p!^a!)6y_p2&oln@lsz6x61=wyusg4('
-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = '@(b=ndac@9k%w#y7(h5p!^a!)6y_p2&oln@lsz6x61=wyusg4('
+
 ALLOWED_HOSTS = []
 
+ROOT_URLCONF = __name__
 
 # Application definition
 
 INSTALLED_APPS = [
     'compressor',
     'django.contrib.sites',
-    'django_comments',
+    #'django-comments',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'bootstrap3',
+    'bootstrap4',
     'producthunt',
     'links',
-    'registration',
+    'django-registration',
 ]
 
 # Login/out settings - plus import above
@@ -79,8 +80,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'producthunt.wsgi.application'
-
-ROOT_URLCONF = 'producthunt.urls'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
