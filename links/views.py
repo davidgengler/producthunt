@@ -30,7 +30,7 @@ class UserProfileDetailView(DetailView):
 from django.views.generic.edit import UpdateView
 from .models import UserProfile
 from .forms import UserProfileForm
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 
 class UserProfileEditView(UpdateView):
     model = UserProfile
@@ -53,7 +53,7 @@ class LinkDetailView(DetailView):
     model = Link
 
 #Update and Delete in CRUD
-from django.core.urlresolvers import reverse_lazy
+from django.urls import reverse_lazy
 from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 
