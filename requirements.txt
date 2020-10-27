@@ -8,7 +8,7 @@ cffi==1.12.3
 chardet==3.0.4
 command-not-found==0.3
 confusable-homoglyphs==3.2.0
-cryptography==2.7
+cryptography==3.2
 cupshelpers==1.0
 defer==1.0.6
 distro==1.4.0
