@@ -13,7 +13,7 @@ cupshelpers==1.0
 defer==1.0.6
 distro==1.4.0
 distro-info===0.18ubuntu0.18.04.1
-Django==2.2.5
+Django==2.2.27
 django-appconf==1.0.3
 django-bootstrap4==1.0.1
 django-compressor==2.3
